@@ -62,7 +62,7 @@ constexpr uint16_t IterationsForPeriod_ns( uint32_t timeInNanoSeconds )
 //  T1L  : 1 code, low voltage time = 1.3us (+- 150ns)
 //  RES  : low voltage time >50us
 //------------------------------------------------------------------------------
-uint32_t g_timingtable[TimingEnum::MAX_TIMES] = 
+uint16_t g_timingtable[TimingEnum::MAX_TIMES] = 
 {
     IterationsForPeriod_ns(500),
     IterationsForPeriod_ns(1200),
