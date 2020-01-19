@@ -50,15 +50,8 @@ union Colour3
     uint8_t as_array[3];
 };
 
-enum PalletteEnum {OFF, White, Red, Green, Blue, MAX_COLOUR };
-Colour3 g_pallete[MAX_COLOUR] = 
-{
-    {0,     0,      0},
-    {255,   255,    255},
-    {255,   0,      0},
-    {0,     255,    0},
-    {0,     0,      255},
-};
+enum Colour {OFF, White, Red, Green, Blue, MAX_COLOUR };
+extern Colour3 g_pallete[MAX_COLOUR];
 
 //------------------------------------------------------------------------------
 // Helper function to determine if a particular bit 1-24 is set inside a colour3.

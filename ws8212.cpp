@@ -43,6 +43,15 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //------------------------------------------------------------------------------
 // Globals within file scope.
 //------------------------------------------------------------------------------
+Colour3 g_pallete[MAX_COLOUR] = 
+{
+    {0,     0,      0},
+    {255,   255,    255},
+    {255,   0,      0},
+    {0,     255,    0},
+    {0,     0,      255},
+};
+
 namespace
 {
     using InstructionPtr = void (*)();
