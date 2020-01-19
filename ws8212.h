@@ -82,7 +82,7 @@ public:
 };
 
 template<uint16_t LEDCOUNT>
-class LEDStripDefinition final : LEDInfoBase
+class LEDStripDefinition final : public LEDInfoBase
 {
 public:
     uint8_t leds[LEDCOUNT];
