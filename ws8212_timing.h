@@ -4,7 +4,9 @@
    //\\     
   //  \\    Description:
               Timing definitions for ws8212.
-
+              https://cdn-shop.adafruit.com/datasheets/WS2811.pdf
+              https://cdn-shop.adafruit.com/datasheets/WS2812.pdf
+              https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf
 ------------------------------
 ------------------------------
 License Text - The MIT License
@@ -55,20 +57,20 @@ constexpr uint16_t IterationsForPeriod_ns( uint32_t timeInNanoSeconds )
 }
 
 //------------------------------------------------------------------------------
-// Low Speed Mode
-//  TOH  : 0 code, high voltage time = 0.5us (+- 150ns)
-//  T1H  : 1 code, high voltage time = 1.2us (+- 150ns)
-//  T0L  : 0 code, low voltage time = 2.0us (+- 150ns)
-//  T1L  : 1 code, low voltage time = 1.3us (+- 150ns)
+// WS2812B Timing - https://cdn-shop.adafruit.com/datasheets/WS2812B.pdf
+//  TOH  : 0 code, high voltage time = 0.35us (+- 150ns)
+//  T1H  : 1 code, high voltage time = 0.7us (+- 150ns)
+//  T0L  : 0 code, low voltage time = 0.8us (+- 150ns)
+//  T1L  : 1 code, low voltage time = 0.6us (+- 150ns)
 //  RES  : low voltage time >50us
 //------------------------------------------------------------------------------
 uint16_t g_timingtable[TimingEnum::MAX_TIMES] = 
 {
-    IterationsForPeriod_ns(500),
-    IterationsForPeriod_ns(1200),
-    IterationsForPeriod_ns(2000),
-    IterationsForPeriod_ns(1300),
-    IterationsForPeriod_ns(50000),
+    IterationsForPeriod_ns(350),        //T0 HIGH DURATION
+    IterationsForPeriod_ns(700),        //T1 HIGH DURATION
+    IterationsForPeriod_ns(800),        //T0 LOW DURATION
+    IterationsForPeriod_ns(600),        //T1 LOW DURATION
+    IterationsForPeriod_ns(51000),      //RESET TIME
 };
 
 //------------------------------------------------------------------------------

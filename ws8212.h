@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------  
     ()      File: ws8212.h
-    /\      Copyright (c) 2020 Andrew Woodward-May - See legal.txt
+    /\      Copyright (c) 2020 Andrew Woodward-May
    //\\     
   //  \\    Description:
               Public interface for basic ws8212 driver.
@@ -39,12 +39,12 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // Colour
 //------------------------------------------------------------------------------
 //------------------------------------------------------------------------------
-union Colour3
+union Colour3 // GRB, maybe add a define for RGB?
 {
     struct 
     {
-        uint8_t red;
         uint8_t green;
+        uint8_t red;
         uint8_t blue;
     } colour;
     uint8_t as_array[3];
@@ -100,3 +100,4 @@ void initialise_ws8212_lib( uint8_t pin );
 // Update LED strip.
 //------------------------------------------------------------------------------
 void writeToLEDs( LEDInfoBase & info );
+
